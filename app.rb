@@ -6,10 +6,6 @@ Bundler.require :default
 set :views, 'templates'
 set :styles, 'styles'
 
-get '/ha/?' do
-  slim :notfound, layout: false
-end
-
 get '/*.css' do |css|
   content_type 'text/css', charset: 'utf-8'
   if File.exists? file = "#{settings.styles}/#{css}.css"
