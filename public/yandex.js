@@ -1,0 +1,17 @@
+ymaps.ready(init);
+var myMap,
+    myPlacemark;
+
+function init(){
+  myMap = new ymaps.Map ("yandex", {
+      center: [55.76, 37.64],
+      zoom: 7
+  });
+
+  myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+      content: 'Москва!',
+      balloonContent: 'Столица России'
+  });
+
+  myMap.geoObjects.add(myPlacemark);
+}

@@ -1,17 +1,27 @@
-.left
-  a href='/': .logo
-    #logo
-    h1 Диванмаркет
-  ul.map
-    li улица Большая Семёновская, дом 10,
-    li ТЦ «Мебель России»,
-    li 4 этаж, в центре зала
-    li.phone +7 495 727-38-93
-  ul.map
-    li Ярославское шоссе, дом 19,
-    li ТЦ «Мебель России», 4 этаж
-    li.phone +7 495 727-38-93
-  ul.map
-    li улица Свободы, дом 29
-    li ТЦ «Мебель России», 1 этаж
-    li.phone +7 909 156-00-89
+.container
+  .left
+    a href='/': .logo
+      #logo
+      h1 Диванмаркет
+    h2.header Адреса магазинов
+    input#semyonovskaya type='radio' name='place' checked=''
+    label for='semyonovskaya': ul.place
+      li Большая Семёновская улица, 10
+      li ТЦ «Мебель России»
+      li 4 этаж, в центре зала
+      li.phone +7 495 727-38-93
+    input#yaroslavskoye type='radio' name='place'
+    label for='yaroslavskoye': ul.place
+      li Ярославское шоссе, 19
+      li ТЦ «Мебель России»
+      li 4 этаж
+      li.phone +7 495 727-38-93
+    input#svobody type='radio' name='place'
+    label for='svobody': ul.place
+      li улица Свободы, 29
+      li ТЦ «Мебель России»
+      li 1 этаж
+      li.phone +7 909 156-00-89
+script src='//api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU'
+script src='/yandex.js'
+
