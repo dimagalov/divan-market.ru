@@ -14,8 +14,8 @@
     p: ul
       li: a href='/maps' Адреса магазинов
       li +7 963 975-76-55
-  .right.fotorama data-fitToWindowHeight='true' data-fitToWindowHeightMargin='100' data-width='100%' data-thumbBorderColor='black' data-cropToFit='true'
+  .right.fotorama data-fitToWindowHeight='true' data-fitToWindowHeightMargin='50' data-width='100%' data-thumbBorderColor='black' data-cropToFit='true' data-background='white'
     - Dir['public/sofas/*'].shuffle.each do |image|
       img src='#{image[/(?<=public).+/]}'
-script src='//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'
+script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js'
 script src='/fotorama.js'

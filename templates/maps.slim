@@ -22,7 +22,25 @@
       li ТЦ «Мебель России»
       li 1 этаж
       li.phone +7 909 156-00-89
-  .right#yandex
-script src='//api-maps.yandex.ru/2.0-stable/?load=package.full&lang=ru-RU'
-script src='/yandex.js'
-
+  .right#map
+script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js'
+script src='//api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU'
+javascript:
+  ymaps.ready(init);
+  var myMap;
+  function init(){
+    $("#map").height( $(".left").height() + 50 );
+    var place = [55.8145, 37.5665];
+    if (navigator.userAgent.match(/(iPhone|iPod)/i)) {
+      place = [51, 37.5665];
+    }
+    myMap = new ymaps.Map ("map", {
+      center: place,
+      zoom: 15,
+    });
+    myMap.balloon.open(
+      [55.811229, 37.560269], { contentBody: 'ул. Вучетича, 20' },
+      { closeButton: false }
+    );
+    myMap.controls.add('zoomControl', {left: 10, bottom: 10});
+  }
