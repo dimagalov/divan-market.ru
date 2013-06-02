@@ -30,16 +30,16 @@ javascript:
   var myMap;
   function init(){
     $("#map").height( $(window).height() );
-    var place = [55.8145, 37.5665];
+    var place = [55.7824,37.7028];
     if (navigator.userAgent.match(/(iPhone|iPod)/i)) {
-      place = [51, 37.5665];
+      place = [51,37.7028];
     }
     myMap = new ymaps.Map ("map", {
       center: place,
       zoom: 15,
     });
     myMap.balloon.open(
-      [55.811229, 37.560269], { contentBody: 'ул. Вучетича, 20' },
+      [55.782410,37.702812], { contentBody: 'Большая Семёновская улица, 10' },
       { closeButton: false }
     );
     myMap.controls.add('zoomControl', {left: 10, bottom: 10});
