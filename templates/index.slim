@@ -12,9 +12,9 @@
     h3 Пружинистая обивка
     p У наших диванов пружинистая обивка. Она не позволяет позвоночнику искривляться.
     p: ul
-      li: a href='/maps' Адреса магазинов
+      li: a.special href='/maps' Адреса магазинов
       li +7 963 975-76-55
-  .right.fotorama data-fitToWindowHeight='true' data-width='100%' data-thumbBorderColor='black' data-cropToFit='true' data-background='white'
+  .right.fotorama data-fitToWindowHeight='true' data-fitToWindowHeightMargin='0' data-width='100%' data-thumbBorderColor='black' data-cropToFit='true' data-background='white' data-autoplay='true' data-alwaysPadding='true' data-margin='0' data-thumbMargin='0' data-aspectRatio='0.01'
     - Dir['public/sofas/*'].shuffle.each do |image|
       img src='#{image[/(?<=public).+/]}'
 script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js'
