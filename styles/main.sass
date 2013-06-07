@@ -11,15 +11,16 @@ $header: 36px
   position: relative
   margin:
     left: 50px
-  font-family: 'PT Sans'
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif
   font-size: $base
   line-height: $baseline
 
 .left
   width: 315px
-  margin-top: 50px
   float: left
-  margin-right: 50px
+  margin:
+    top: 50px
+    right: 50px
 
 h1
   @extend h2
@@ -64,7 +65,7 @@ input[type=radio]
   cursor: hand
 
 .highlight, .highlight:hover
-  background: yellow
+  background: $color
   cursor: default
 
 h3
