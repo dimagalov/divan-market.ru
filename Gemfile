@@ -1,12 +1,6 @@
 source 'https://rubygems.org'
-# ruby '2.0.0'
+ruby '2.0.0'
 
-gem 'sinatra'
+gem 'sword'
 gem 'bundler'
-gem 'thin'
-gem 'slim'
-gem 'compass'
-
-group :production do
-
-end
+# gem 'thin'
