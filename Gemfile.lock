@@ -20,7 +20,7 @@ GEM
     slim (2.0.0)
       temple (~> 0.6.5)
       tilt (~> 1.3, >= 1.3.3)
-    sword (0.8.1)
+    sword (0.8.2)
       sinatra (>= 1.3.2)
     temple (0.6.5)
     thin (1.5.1)
