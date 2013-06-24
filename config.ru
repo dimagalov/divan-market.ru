@@ -1,2 +1,2 @@
-require 'sword'
-run Sword::Application
+require './app'
+run Sinatra::Application
