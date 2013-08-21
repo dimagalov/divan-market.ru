@@ -1,0 +1,21 @@
+.container
+  .left
+    .logo
+      #logo
+      h1 Диван-маркет
+    h2.header Диваны, кровати, матрасы
+    p Мы продаём удобные диваны, кровати и матрасы. Они дольше прослужат и не искривят спину.
+    
+    h3 Никакого ДСП
+    p ДСП — это пресованные щепки. Диваны из ДСП не служат долго: разваливаются, щепки начинают разрыхляться. У нас всё из массива дерева.
+    
+    h3 Пружинистая обивка
+    p У наших диванов пружинистая обивка. Она не позволяет позвоночнику искривляться.
+    p: ul
+      li: a.special href='/maps' Адреса магазинов
+      li +7 495 727-38-93
+  .right.fotorama data-width='100%' data-height="100%" data-background='white' data-autoplay='true' data-nav='thumbs' data-fit='cover' data-thumb-height='40' data-thumb-width='100'
+    - Dir['sofas/*'].shuffle.each do |image|
+      img src='/sofas/#{image[/[^\/]+$/]}'
+== jquery '1.10.0'
+== fotorama

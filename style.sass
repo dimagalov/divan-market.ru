@@ -1,0 +1,96 @@
+@import compass
+@import compass/reset
+@import "logo/*.png"
+
+$base: 15px
+$baseline: 1.3
+$color: #F7EDD1
+$header: 36px
+$disable-magic-sprite-selectors: true
+
+.container
+  position: relative
+  margin:
+    left: 50px
+  font-family: 'PT Sans', Arial, Helvetica, sans-serif
+  font-size: $base
+  line-height: $baseline
+
+.left
+  width: 315px
+  float: left
+  margin:
+    top: 50px
+    right: 50px
+
+h1
+  @extend h2
+  font-weight: bold
+
+h2
+  font-size: $header
+  line-height: 1.2
+  max-width: 10em
+
+.logo h1
+  vertical-align: -14%
+  margin-left: 8px
+  display: inline
+
+#logo
+  +inline-block
+  width: logo-sprite-width(logo)
+  height: logo-sprite-height(logo)
+  +logo-sprite(logo)
+
+a:hover #logo
+  @include logo-sprite(logo_hover)
+
+.logo, .header
+  margin-bottom: $base * $baseline * 2
+
+p
+  margin-bottom: $base * $baseline
+
+input[type=radio]
+  display: none
+
+.place
+  padding: 10px
+  margin: -10px
+  margin-bottom: $base * $baseline - 10px
+
+.place:hover
+  background: #f3f3f3
+  cursor: pointer
+  cursor: hand
+
+.highlight, .highlight:hover
+  background: $color
+  cursor: default
+
+h3
+  font-weight: bold
+
+.right
+  overflow: hidden
+  height: 100%
+
+a.special
+  color: #0060c0
+
+a
+  color: black
+  &:hover
+    color: red
+
+::selection
+  background: $color
+  color: black
+
+.fotorama__nav__frame--thumb,
+.fotorama__nav__frame
+  padding: 0 !important
+
+.fotorama__thumb-border
+  margin-top: 0 !important

@@ -1,0 +1,69 @@
+.container
+  .left
+    a href='/': .logo
+      #logo
+      h1 Диван-маркет
+    h2.header Адреса магазинов
+    input#semyonovskaya type='radio' name='place' checked='' data-place='[55.7824, 37.7028]'
+    label for='semyonovskaya'
+      ul.place
+        li Большая Семёновская улица, 10
+        li ТЦ «Мебель России»
+        li 4 этаж, в центре зала
+        li.phone +7 495 727-38-93
+    input#yaroslavskoye type='radio' name='place' data-place='[55.858496, 37.685930]'
+    label for='yaroslavskoye'
+      ul.place
+        li Ярославское шоссе, 19
+        li ТЦ «Мебель России»
+        li 4 этаж
+        li.phone +7 495 727-38-93
+    input#svobody type='radio' name='place' data-place='[55.837180, 37.452995]'
+    label for='svobody'
+      ul.place
+        li улица Свободы, 29
+        li ТЦ «Мебель России»
+        li 1 этаж
+        li.phone +7 909 156-00-89
+  .right#map
+script src='//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js'
+script src='//api-maps.yandex.ru/2.0-stable/?load=package.standard&lang=ru-RU'
+javascript:
+  ymaps.ready(init);
+  var myMap, item;
+  var cookie = "divanmarket_place=";
+
+  function create(){
+    radio = $("input[type=radio]:checked");
+    label = "label[for=" + radio.attr("id") + "]";
+
+    $("#map").height( $(window).height() );
+    $("label ul").removeClass("highlight");
+    $(label + " ul").addClass("highlight");
+
+    myMap = new ymaps.Map ("map", {
+      center: radio.data("place"),
+      zoom: 15,
+    });
+    myMap.balloon.open(
+      radio.data("place"), { contentBody: $(label + " li:first-child").text() },
+      { closeButton: false }
+    );
+    myMap.controls.add('zoomControl', {left: 10, bottom: 10});
+    document.cookie = cookie + radio.attr("id") + "; expires=Wed, 12-Dec-2040 00:00:00 GMT";
+  }
+
+  $('input[type=radio]').change(function(){ myMap.destroy(); create(); });
+  function init(){
+    if(document.cookie == "") { item = "semyonovskaya" } else { item = document.cookie.replace(cookie, "") }
+    $("#" + item).attr("checked", true);
+    create();
+  }
+
+  var width = $(window).width(); 
+  $(window).resize(function() {
+    if ($(window).width()==width) return; 
+    width = $(window).width();
+    myMap.destroy();
+    create();  
+  });
