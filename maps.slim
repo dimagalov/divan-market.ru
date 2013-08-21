@@ -59,3 +59,11 @@ javascript:
     $("#" + item).attr("checked", true);
     create();
   }
+
+  var width = $(window).width(); 
+  $(window).resize(function() {
+    if ($(window).width()==width) return; 
+    width = $(window).width();
+    myMap.destroy();
+    create();  
+  });

@@ -1,5 +1,6 @@
 @import compass
 @import compass/reset
+@import "logo/*.png"
 
 $base: 15px
 $baseline: 1.3
@@ -37,12 +38,12 @@ h2
 
 #logo
   +inline-block
-  width: 67px
-  height: $header
-  background-image: url(/logo.png)
+  width: logo-sprite-width(logo)
+  height: logo-sprite-height(logo)
+  +logo-sprite(logo)
 
 a:hover #logo
-  background-image: url(/logo_hover.png)  
+  @include logo-sprite(logo_hover)
 
 .logo, .header
   margin-bottom: $base * $baseline * 2
